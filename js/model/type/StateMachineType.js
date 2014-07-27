@@ -1,0 +1,34 @@
+/**
+ * @author Cameron Manavian
+ *
+ * @class StateMachineType
+ */
+puremvc.define({
+	name: 'lockApp.model.type.StateMachineType'
+},
+// INSTANCE MEMBERS
+{},
+// STATIC MEMBERS
+{
+	/** NAMES for actions in FSM **/
+	ACTION_STARTED: 'ACTION_STARTED',
+	ACTION_LOCKED: 'ACTION_LOCKED',
+	ACTION_UNLOCKED: 'ACTION_UNLOCKED',
+	ACTION_IDLE_TIMEOUT: 'ACTION_IDLE_TIMEOUT',
+	ACTION_FAILED_STARTING: 'ACTION_FAILED_STARTING',
+	ACTION_TOO_MANY_ATTEMPTS: 'ACTION_TOO_MANY_ATTEMPTS',
+
+	/** NAMES for events that occur at the start of transitions to new states **/
+	CHANGED_TO_LOCKED: 'CHANGED_TO_LOCKED',
+	CHANGED_TO_UNLOCKED: 'CHANGED_TO_UNLOCKED',
+	CHANGED_TO_FAILING: 'CHANGED_TO_FAILING',
+
+	/** Exiting messages, used for state exit guards **/
+	EXITING_LOCKED: 'EXITING_LOCKED',
+
+	/** NAMES for states in FSM **/
+	STATE_STARTING: 'STATE_STARTING',
+	STATE_LOCKED: 'STATE_LOCKED',
+	STATE_UNLOCKED: 'STATE_UNLOCKED',
+	STATE_FAILING: 'STATE_FAILING'
+});

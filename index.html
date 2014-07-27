@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link type="text/css" rel="stylesheet" href="css/reset.css" />
+		<title>PureMVC JavaScript Utility: State Machine Demo - Locks</title>
+	</head>
+	<body>
+
+		<script type="text/javascript" src="../../puremvc-js-util-statemachine/lib-multicore/puremvc-1.0.1.js"></script>
+
+		<script type="text/javascript" src="../../puremvc-js-util-statemachine/src-multicore/org/puremvc/js/multicore/utilities/statemachine/StateMachine.js"></script>
+		<script type="text/javascript" src="../../puremvc-js-util-statemachine/src-multicore/org/puremvc/js/multicore/utilities/statemachine/FSMInjector.js"></script>
+		<!--<script type="text/javascript" src="../../puremvc-js-util-statemachine/src-multicore/org/puremvc/js/multicore/utilities/statemachine/State.js"></script>
+		<script type="text/javascript" src="../../puremvc-js-util-statemachine/src-multicore/org/puremvc/js/multicore/utilities/statemachine/FSMParser.js"></script>-->
+
+		<!-- START: LockApp files -->
+		
+		<!-- APPLICATION CONSTANTS -->
+		<script type="text/javascript" src="js/AppConstants.js"></script>
+		<script type="text/javascript" src="js/model/type/StateMachineType.js"></script>
+
+		<!-- COMMANDS -->
+		<script src="js/controller/StartupCommand.js"></script>
+		<script src="js/controller/states/StartingCommand.js"></script>
+		<script src="js/controller/states/FailingCommand.js"></script>
+		<script src="js/controller/states/LockedCommand.js"></script>
+		<script src="js/controller/states/UnlockedCommand.js"></script>
+		<script src="js/controller/states/InjectFSMCommand.js"></script>
+
+		<!-- MAIN APPLICATION -->
+		<script type="text/javascript" src="js/lockApp.js"></script>
+		<!-- END: LockApp files -->
+
+		<!-- START THE APPLICATION -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var app = new lockApp.Application();
+			});
+		</script>
+	</body>
+</html>
