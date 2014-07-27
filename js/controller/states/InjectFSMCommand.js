@@ -24,6 +24,7 @@ puremvc.define({
 	
 	_registerStateCommands: function() {
 		this.facade.registerCommand(lockApp.model.type.StateMachineType.CHANGED_TO_LOCKED, lockApp.controller.LockedCommand);
+		this.facade.registerCommand(lockApp.model.type.StateMachineType.EXITING_LOCKED, lockApp.controller.ExitingLockedCommand);
 		this.facade.registerCommand(lockApp.model.type.StateMachineType.CHANGED_TO_UNLOCKED, lockApp.controller.UnlockedCommand);
 		this.facade.registerCommand(lockApp.model.type.StateMachineType.CHANGED_TO_FAILING, lockApp.controller.FailingCommand);
 	},

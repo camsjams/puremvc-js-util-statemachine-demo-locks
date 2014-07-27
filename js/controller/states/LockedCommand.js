@@ -15,5 +15,7 @@ puremvc.define({
 	 */
 	execute: function (note) {
 		console.warn('LockedCommand execute() our element is locked', note);
+		// move on to next state, unlock element
+		this.facade.sendNotification(utilities.statemachine.StateMachine.ACTION, null, lockApp.model.type.StateMachineType.ACTION_UNLOCKED);
 	}
 });
