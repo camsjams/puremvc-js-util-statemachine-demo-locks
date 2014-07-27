@@ -2,6 +2,10 @@
 
 This demo illustrates usage of the native PureMVC JavaScript Finite State Machine Utility.
 
+The pseudo-classes are written in PureMVC's optional built-in style.
+
+* [Live Demo](http://etalx.com/puremvc-js-util-statemachine-demo-locks)
+
 ## Status
 Beta - Version 0.5.0
 
@@ -10,3 +14,4 @@ Beta - Version 0.5.0
 
 ## Platforms / Technologies
 * [JavaScript](http://en.wikipedia.org/wiki/JavaScript)
+* [jQuery](http://api.jquery.com/) (for dom manipulation and custom event binding)

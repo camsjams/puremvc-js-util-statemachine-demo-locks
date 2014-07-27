@@ -14,6 +14,7 @@ puremvc.define({
 	 * @override
 	 */
 	execute: function (note) {
-		console.warn('FailingCommand execute() our app failed', note);
+		console.warn('FailingCommand execute() lockApp failed with error message:');
+		console.warn(note.body);
 	}
 });

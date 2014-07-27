@@ -1,0 +1,79 @@
+@charset "utf-8";
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+}
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic;
+	font-size: .8em;
+}
+h1 {
+	margin: 1em 0;
+}
+.container {
+	width: 100%;
+	max-width: 40em;
+	margin: 1em auto;
+}
+.container.featured {
+	background-color: #333;
+	border-radius: 10px;
+	position: relative;
+}
+.content img {
+	display: block;
+	width: 100%;
+	max-width: 300px;
+	margin: 0 auto;
+}
+.icon {
+	width: 128px;
+	height: 128px;
+	background-repeat: no-repeat;
+}
+.denied .icon {
+	background-image: url('../images/denied.png');
+}
+.locked .icon {
+	background-image: url('../images/locked.png');
+}
+.unlocked .icon {
+	background-image: url('../images/unlocked.png');
+}
+.accessControl .icon {
+	margin: 3em auto 0;
+}
+.accessControl.locked,
+.accessControl.denied {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	left: 0px;
+	opacity: .88;
+	bottom: 0;
+	background-color: #fff;
+}
+.required {
+	border: 1px solid #f00;
+}
+.hints {
+	font-size: .9em;
+	margin: 2em 0;
+}
+.hints span {
+	text-decoration: underline;
+}
+.hint {
+	margin: 1em 0;
+	list-style-type: decimal;
+}
+
+.accessControl.unlocked,
+.hints .hint1,
+.hints .hint2,
+.hints .hint3 {
+	display: none;
+}

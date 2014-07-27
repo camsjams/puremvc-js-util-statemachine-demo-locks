@@ -14,13 +14,14 @@ puremvc.define({
 	 * @override
 	 */
 	execute: function (note) {
-		this._initializeProxies();
-		console.log('StartingCommand execute() switch to lock');
-		// move on to next state, lock element
-		this.facade.sendNotification(utilities.statemachine.StateMachine.ACTION, null, lockApp.model.type.StateMachineType.ACTION_STARTED);
+		try {
+			// prepare view
+			this.facade.registerMediator(new lockApp.view.mediator.AccessControlMediator());
+			// move on to next state, lock element
+			this.facade.sendNotification(utilities.statemachine.StateMachine.ACTION, null, lockApp.model.type.StateMachineType.ACTION_STARTED);
+		} catch (e) {
+			// view wasn't happy, fail state
+			this.facade.sendNotification(utilities.statemachine.StateMachine.ACTION, e, lockApp.model.type.StateMachineType.ACTION_FAILED_STARTING);
+		}
 	},
-	
-	_initializeProxies: function() {
-		console.log('StartingCommand _initializeProxies()');
-	}
 });
