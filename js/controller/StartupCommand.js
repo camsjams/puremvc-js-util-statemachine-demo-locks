@@ -14,7 +14,6 @@ puremvc.define({
 	 * @override
 	 */
 	initializeMacroCommand: function () {
-		console.log('StartupCommand initializeMacroCommand()');
 		this.addSubCommand(lockApp.controller.InjectFSMCommand);
 		this.addSubCommand(lockApp.controller.StartingCommand);
 	}

@@ -3,10 +3,10 @@
 This demo illustrates usage of the native PureMVC JavaScript Finite State Machine Utility.
 
 ## Status
-Beta - Version 0.0.1
+Beta - Version 0.5.0
+
+## PureMVC Utilities Used
+* [State Machine](https://github.com/camsjams/puremvc-js-util-statemachine/wiki)
 
 ## Platforms / Technologies
 * [JavaScript](http://en.wikipedia.org/wiki/JavaScript)
-
-
-https://github.com/camsjams/puremvc-js-util-statemachine/wiki
