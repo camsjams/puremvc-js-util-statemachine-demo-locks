@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link type="text/css" rel="stylesheet" href="css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="css/demo.css" />
+		<title>PureMVC JavaScript Utility: State Machine Demo - Locks</title>
+	</head>
+	<body>
+		<div id="lockForm">
+			<div class="container featured">
+				<div class="content">
+					<img src="images/cat.jpg" alt="a cat picture" title="sup cat" />
+				</div>
+				<div class="accessControl locked">
+					<div class="icon"></div>
+				</div>
+			</div><!-- .container.featured -->
+			<div class="container">
+				<h1 class="title">Loading ...</h1>
+				<form action="#">
+					What is the password?
+					<input type="text" name="password" id="password" />
+					<input type="submit" name="submit" value="unlock image" />
+					<br />
+					<div class="hints">
+						<ol>
+							<li class="hint hint1">
+								<strong>[Hint] complete this quote</strong>:
+								<br />
+								<em>Wait a minute. Wait a minute, Doc. Ah... Are you telling me that you built a time machine... out of a </em><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>?
+							</li>
+							<li class="hint hint2">
+								If you have the word right, make sure to upper camel case it!
+							</li>
+							<li class="hint hint3">
+								Last Chance: It rhymes with <strong>MeLorean</strong> ...
+							</li>
+						</ol>
+					</div>
+					<p class="attempts"></p>
+				</form>
+			</div><!-- .container -->
+		</div><!-- #lockForm -->
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- START: puremvc core files -->
+		<script type="text/javascript" src="puremvc-js-util-statemachine/lib-multicore/puremvc-1.0.1.min.js"></script>
+		<script type="text/javascript" src="puremvc-js-util-statemachine/bin/puremvc.utility.statemachine-1.0.0.min.js"></script>
+		<!-- END: puremvc core files -->
+
+		<!------- START: LockApp files ------->
+		<!-- APPLICATION CONSTANTS -->
+		<script type="text/javascript" src="js/AppConstants.js"></script>
+		<script type="text/javascript" src="js/model/type/StateMachineType.js"></script>
+		<script type="text/javascript" src="js/model/type/NotificationTypes.js"></script>
+		<script type="text/javascript" src="js/view/events/ViewEvents.js"></script>
+
+		<!-- VIEW COMPONENTS -->
+		<script type="text/javascript" src="js/view/component/LockForm.js"></script>
+
+		<!-- MEDIATORS -->
+		<script type="text/javascript" src="js/view/mediator/AccessControlMediator.js"></script>
+
+		<!-- COMMANDS -->
+		<script src="js/controller/StartupCommand.js"></script>
+		<script src="js/controller/states/StartingCommand.js"></script>
+		<script src="js/controller/states/FailingCommand.js"></script>
+		<script src="js/controller/states/LockedCommand.js"></script>
+		<script src="js/controller/states/ExitingLockedCommand.js"></script>
+		<script src="js/controller/states/UnlockedCommand.js"></script>
+		<script src="js/controller/states/InjectFSMCommand.js"></script>
+
+		<!-- MAIN APPLICATION -->
+		<script type="text/javascript" src="js/lockApp.js"></script>
+		<!------- END: LockApp files ------->
+
+		<!-- START THE APPLICATION -->
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				var app = new lockApp.Application();
+			});
+		</script>
+	</body>
+</html>

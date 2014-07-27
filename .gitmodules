@@ -1,0 +1,3 @@
+[submodule "puremvc-js-util-statemachine"]
+	path = puremvc-js-util-statemachine
+	url = https://github.com/camsjams/puremvc-js-util-statemachine.git
