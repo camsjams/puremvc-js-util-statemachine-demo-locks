@@ -14,6 +14,7 @@ puremvc.define({
 	 * @override
 	 */
 	execute: function (note) {
-		console.warn('UnlockedCommand execute() our element is unlocked', note);
+		// tell view to show the content
+		this.facade.sendNotification(lockApp.model.type.NotificationTypes.CONTENT_UNLOCKED);
 	}
 });

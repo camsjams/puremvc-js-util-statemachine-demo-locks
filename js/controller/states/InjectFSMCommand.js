@@ -14,8 +14,6 @@ puremvc.define({
 	 * @override
 	 */
 	execute: function (note) {
-		console.warn('InjectFSMCommand()', note);
-		console.log('fsm:', this._getFsm());
 		// register the commands for our other states
 		this._registerStateCommands();
 		// Create and inject the StateMachine
@@ -25,8 +23,8 @@ puremvc.define({
 	},
 	
 	_registerStateCommands: function() {
-		console.info('_registerStateCommands()');
 		this.facade.registerCommand(lockApp.model.type.StateMachineType.CHANGED_TO_LOCKED, lockApp.controller.LockedCommand);
+		this.facade.registerCommand(lockApp.model.type.StateMachineType.EXITING_LOCKED, lockApp.controller.ExitingLockedCommand);
 		this.facade.registerCommand(lockApp.model.type.StateMachineType.CHANGED_TO_UNLOCKED, lockApp.controller.UnlockedCommand);
 		this.facade.registerCommand(lockApp.model.type.StateMachineType.CHANGED_TO_FAILING, lockApp.controller.FailingCommand);
 	},
