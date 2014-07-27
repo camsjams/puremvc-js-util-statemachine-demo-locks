@@ -7,7 +7,7 @@ The pseudo-classes are written in PureMVC's optional built-in style.
 * [Live Demo](http://etalx.com/puremvc-js-util-statemachine-demo-locks)
 
 ## Status
-Beta - Version 0.5.0
+Production - Version 1.0.0
 
 ## PureMVC Utilities Used
 * [State Machine](https://github.com/camsjams/puremvc-js-util-statemachine/wiki)
