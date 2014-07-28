@@ -6,11 +6,8 @@
 puremvc.define({
 	name: 'lockApp.view.event.ViewEvents'
 }, {},
-// STATIC MEMBERS   
+// INSTANCE MEMBERS   
 {
-	// Event name constants
-	PASSWORD_SUBMITTED: 'PASSWORD_SUBMITTED',
-	UNLOCKED_TIMEOUT: 'UNLOCKED_TIMEOUT',
 
 	// Add event listener
 	addEventListener: function (object, eventName, listener) {
