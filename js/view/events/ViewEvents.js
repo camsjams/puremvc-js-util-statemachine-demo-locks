@@ -9,13 +9,13 @@ puremvc.define({
 // INSTANCE MEMBERS   
 {
 
-	// Add event listener
+	// Add event listener using jQuery.bind()
 	addEventListener: function (object, eventName, listener) {
 		object.bind(eventName, {self: listener}, listener.handleEvent);
 	},
 
-	// Dispatch event
+	// Dispatch event using jQuery.trigger()
 	dispatchEvent: function (object, eventName, data) {
 		object.trigger(eventName, data);
-	},
+	}
 });
