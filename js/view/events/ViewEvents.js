@@ -6,7 +6,7 @@
 puremvc.define({
 	name: 'lockApp.view.event.ViewEvents'
 }, {},
-// INSTANCE MEMBERS   
+// STATIC MEMBERS   
 {
 
 	// Add event listener using jQuery.bind()
