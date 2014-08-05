@@ -12,7 +12,7 @@
 		<div id="LockApp_v1">
 			<div class="container featured">
 				<div class="content">
-					<img src="images/cat.jpg" alt="a cat picture" title="sup cat" />
+					<div style="width: 100%; height: 200px;">hh</div>
 				</div>
 				<div class="accessControl locked">
 					<div class="icon"></div>
@@ -44,11 +44,49 @@
 				</form>
 			</div><!-- .container -->
 		</div><!-- #LockApp_v1 -->
+		
+		<div id="LockApp_v2">
+			<div class="container featured">
+				<div class="content">
+					<div style="width: 100%; height: 200px;">hh</div>
+				</div>
+				<div class="accessControl locked">
+					<div class="icon"></div>
+				</div>
+			</div><!-- .container.featured -->
+			<div class="container">
+				<h1 class="title">Loading ...</h1>
+				<form action="#">
+					What is the password?
+					<input type="text" name="password" id="password" />
+					<input type="submit" name="submit" value="unlock image" />
+					<br />
+					<div class="hints">
+						<ol>
+							<li class="hint hint1">
+								<strong>[Hint] complete this quote</strong>:
+								<br />
+								<em>Wait a minute. Wait a minute, Doc. Ah... Are you telling me that you built a time machine... out of a </em><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>?
+							</li>
+							<li class="hint hint2">
+								If you have the word right, make sure to upper camel case it!
+							</li>
+							<li class="hint hint3">
+								Last Chance: It rhymes with <strong>MeLorean</strong> ...
+							</li>
+						</ol>
+					</div>
+					<p class="attempts"></p>
+				</form>
+			</div><!-- .container -->
+		</div><!-- #LockApp_v2 -->
 
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<!-- START: puremvc core files -->
 		<script type="text/javascript" src="puremvc-js-util-statemachine/lib-multicore/puremvc-1.0.1.min.js"></script>
-		<script type="text/javascript" src="puremvc-js-util-statemachine/bin/puremvc.utility.statemachine-1.0.1.min.js"></script>
+		<script type="text/javascript" src="puremvc-js-util-statemachine/src-multicore/org/puremvc/js/multicore/utilities/statemachine/State.js"></script>
+		<script type="text/javascript" src="puremvc-js-util-statemachine/src-multicore/org/puremvc/js/multicore/utilities/statemachine/StateMachine.js"></script>
+		<script type="text/javascript" src="puremvc-js-util-statemachine/src-multicore/org/puremvc/js/multicore/utilities/statemachine/FSMInjector.js"></script>
 		<!-- END: puremvc core files -->
 
 		<!------- START: LockApp files ------->
@@ -80,7 +118,8 @@
 		<!-- START THE APPLICATION -->
 		<script>
 			document.addEventListener('DOMContentLoaded', function() {
-				var app1 = new lockApp.Application('_v1');
+				var app1 = new lockApp.Application('_v1'),
+					app2 = new lockApp.Application('_v2');
 			});
 		</script>
 	</body>
