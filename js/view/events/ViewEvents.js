@@ -11,11 +11,17 @@ puremvc.define({
 
 	// Add event listener using jQuery.bind()
 	addEventListener: function (object, eventName, listener) {
-		object.bind(eventName, {self: listener}, listener.handleEvent);
+		object.bind(eventName, {
+			self: listener
+		}, listener.handleEvent);
 	},
 
 	// Dispatch event using jQuery.trigger()
 	dispatchEvent: function (object, eventName, data) {
 		object.trigger(eventName, data);
-	}
+	},
+
+	PASSWORD_SUBMITTED: 'PASSWORD_SUBMITTED',
+
+	UNLOCKED_TIMEOUT: 'UNLOCKED_TIMEOUT'
 });

@@ -6,9 +6,9 @@
 	 */
 	puremvc.define({
 		name: 'lockApp.view.component.LockForm',
-		constructor: function () {
+		constructor: function (appId) {
 			// select dom elements
-			this.$root = $(lockApp.view.component.LockForm.SELECTOR);
+			this.$root = $('#' + appId);
 			this.$accessControl = this.$root.find('.accessControl');
 			this.$form = this.$root.find('form');
 
@@ -65,8 +65,9 @@
 			// add form submit event
 			this.$form.submit(function (e) {
 				e.preventDefault();
-				$('#password').removeClass('required');
-				var password = $('#password').val();
+				var $password = self.$form.find('#password'), 
+					password = $password.val();
+				$password.removeClass('required');
 				// make sure the password isnt empty
 				if (password && password !== '') {
 					self.attempts++;
@@ -75,7 +76,7 @@
 						'password': password
 					});
 				} else {
-					$('#password').addClass('required');
+					$password.addClass('required');
 				}
 			});
 		},

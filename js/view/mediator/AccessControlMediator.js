@@ -21,7 +21,7 @@ puremvc.define({
 
 	// Code to be executed when the Mediator instance is registered with the View
 	onRegister: function () {
-		this.setViewComponent(new lockApp.view.component.LockForm);
+		this.setViewComponent(new lockApp.view.component.LockForm(this.facade.multitonKey));
 		this.viewComponent.addEventListener(lockApp.view.event.ViewEvents.PASSWORD_SUBMITTED, this);
 		this.viewComponent.addEventListener(lockApp.view.event.ViewEvents.UNLOCKED_TIMEOUT, this);
 	},
